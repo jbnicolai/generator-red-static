@@ -1,0 +1,8 @@
+// <%= name %> Page
+
+// Remember to add this to your style.scss file.
+// @import "pages/<%= _.slugify(name) %>";
+
+.page-<%= _.slugify(name) %> {
+
+}

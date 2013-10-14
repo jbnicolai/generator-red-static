@@ -14,7 +14,7 @@
 		{# Place favicon.ico and apple-touch-icon.png in the root directory #}
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
 	</head>
-	<body>
+	<body class="page page-{% block page_name %}{% endblock page_name %}">
 		<div id="container">
 			<header>
 				<nav role="navigation">
