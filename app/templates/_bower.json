@@ -1,0 +1,10 @@
+{
+    "name": "<%= _.slugify(projectName) %>",
+    "private": true,
+    "version": "0.0.0",
+    "dependencies": {
+        "jquery": "~1.9.1",
+        "caboose": "git@github.com:ff0000/caboose.git#feature/bower"
+    }
+}
+
