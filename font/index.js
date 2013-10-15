@@ -7,15 +7,27 @@ var yeoman = require('yeoman-generator');
 
 var FontGenerator = module.exports = function FontGenerator(args, options, config) {
 	yeoman.generators.Base.apply(this, arguments);
-
-	console.log('You called the font subgenerator with the argument ' + this.name + '.');
 };
 
 util.inherits(FontGenerator, yeoman.generators.Base);
 
-FontGenerator.prototype.getAvailableFonts = function getAvailableFonts() {
-	this.root = '/Users/timwood';
+FontGenerator.prototype.getRootPath = function getRootPath() {
+	var cb = this.async();
 
+	var prompts = [{
+		name: 'root',
+		type: 'input',
+		message: 'Where are the webfonts located?',
+		default: '/Users/timwood/Desktop/fonts'
+	}];
+
+	this.prompt(prompts, function (props) {
+		this.root = props.root;
+		cb();
+	}.bind(this));
+};
+
+FontGenerator.prototype.getAvailableFonts = function getAvailableFonts() {
 	this.availableFonts = fs.readdirSync(this.root).filter(function (file) {
 		return fs.statSync(path.join(this.root, file)).isDirectory() && file[0] !== '.';
 	}.bind(this));
@@ -65,8 +77,7 @@ FontGenerator.prototype._processFolder = function _processFolder(folder) {
 
 	fs.readdirSync(folder).forEach(function (file) {
 		var ext = path.extname(file);
-		files[ext] = path.join(folder, slugify + ext);
-		console.log(files[ext]);
+		files[ext] = path.join(folder, file);
 	});
 
 	this._copyFontFile(files['.woff']);
@@ -83,10 +94,14 @@ FontGenerator.prototype._copyFontFile = function _copyFontFile(file) {
 	}
 
 	var done = this.async();
+	var destRoot = 'static/fonts';
+	var fontName = path.basename(path.dirname(file));
+	var destName = _.slugify(fontName) + path.extname(file);
+	var dest = path.join(destRoot, destName);
 
-	console.log(file);
+	console.log(file, dest);
 
-	//fs.createReadStream('test.log').pipe(fs.createWriteStream('newLog.log'));
+	fs.createReadStream(file).pipe(fs.createWriteStream(dest));
 
 	setTimeout(done, 2000);
 };
