@@ -26,9 +26,9 @@ module.exports = function (grunt) {
 				files: ['<%= project.source %>/scss/**/*.{scss,sass}'],
 				tasks: ['compass:server']
 			},
-			alone: {
+			haychtml: {
 				files: ['<%= project.pages %>/*.html'],
-				tasks: ['alone']
+				tasks: ['haychtml']
 			},
 			livereload: {
 				options: {
