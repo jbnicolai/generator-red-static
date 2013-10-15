@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var util = require('util');
 var _ = require('underscore.string');
+var Font = require('./font');
 var yeoman = require('yeoman-generator');
 
 var FontGenerator = module.exports = function FontGenerator(args, options, config) {
@@ -18,7 +19,7 @@ FontGenerator.prototype.getRootPath = function getRootPath() {
 		name: 'root',
 		type: 'input',
 		message: 'Where are the webfonts located?',
-		default: '/Users/timwood/Desktop/fonts'
+		default: '/Volumes/Resource/Web Resources/Webfonts'
 	}];
 
 	this.prompt(prompts, function (props) {
@@ -66,43 +67,9 @@ FontGenerator.prototype.askFor = function askFor() {
 };
 
 FontGenerator.prototype.files = function files() {
-	this.selectedFonts.map(function (file) {
-		return path.join(this.root, this.actualPathMap[file]);
-	}.bind(this)).forEach(this._processFolder.bind(this));
+	this.selectedFonts.forEach(function (file) {
+		var font = new Font(path.join(this.root, this.actualPathMap[file]));
+		font.save('static/fonts', this.includeSVG);
+		this.template('_font.scss', 'static/scss/fonts/_' + font.slug + '.scss', font);
+	}.bind(this));
 };
-
-FontGenerator.prototype._processFolder = function _processFolder(folder) {
-	var files = {};
-	var slugify = _.slugify(path.basename(folder));
-
-	fs.readdirSync(folder).forEach(function (file) {
-		var ext = path.extname(file);
-		files[ext] = path.join(folder, file);
-	});
-
-	this._copyFontFile(files['.woff']);
-	this._copyFontFile(files['.ttf']);
-	this._copyFontFile(files['.eot']);
-	if (this.includeSVG) {
-		this._copyFontFile(files['.svg']);
-	}
-};
-
-FontGenerator.prototype._copyFontFile = function _copyFontFile(file) {
-	if (!file) {
-		return;
-	}
-
-	var done = this.async();
-	var destRoot = 'static/fonts';
-	var fontName = path.basename(path.dirname(file));
-	var destName = _.slugify(fontName) + path.extname(file);
-	var dest = path.join(destRoot, destName);
-
-	console.log(file, dest);
-
-	fs.createReadStream(file).pipe(fs.createWriteStream(dest));
-
-	setTimeout(done, 2000);
-};
-
