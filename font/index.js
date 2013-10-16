@@ -73,3 +73,15 @@ FontGenerator.prototype.files = function files() {
 		this.template('_font.scss', 'static/scss/fonts/_' + font.slug + '.scss', font);
 	}.bind(this));
 };
+
+FontGenerator.prototype.updateAllPagesScss = function files() {
+	var base = 'static/scss/fonts/';
+	var fonts = this.expand(base + '*.scss').map(function (file) {
+		return file.replace(base, '').replace(/^_+/, '').replace('.scss', '');
+	}).filter(function (file) {
+		return file !== 'all';
+	});
+	var content = '@import "' + fonts.join('",\n\t\t"') + '";';
+
+	this.write('static/scss/fonts/__all.scss', content);
+};

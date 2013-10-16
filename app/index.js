@@ -73,6 +73,7 @@ RedStaticGenerator.prototype.scss = function scss() {
 	this.copy('static/scss/config.rb', 'static/scss/config.rb');
 
 	this.mkdir('static/scss/pages');
+	this.copy('static/scss/pages/all.scss', 'static/scss/pages/__all.scss');
 	this.copy('static/scss/pages/index.scss', 'static/scss/pages/_index.scss');
 
 	this.mkdir('static/scss/base');
@@ -81,6 +82,7 @@ RedStaticGenerator.prototype.scss = function scss() {
 	this.copy('static/scss/base/footer.scss', 'static/scss/base/_footer.scss');
 
 	this.mkdir('static/scss/fonts');
+	this.copy('static/scss/fonts/all.scss', 'static/scss/fonts/__all.scss');
 	this.copy('static/scss/fonts/icons.scss', 'static/scss/fonts/_icons.scss');
 
 	this.mkdir('static/scss/mixins');
