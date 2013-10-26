@@ -1,3 +1,5 @@
+// <%= fontFamily %> <%= fontWeight %>
+
 @font-face {
 	font-family: "<%= fontFamily %>";
 	src: url('../fonts/<%= slug %>.eot');

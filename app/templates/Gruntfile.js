@@ -21,6 +21,9 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		project: CONFIG,
+
+		/********* SERVER + WATCH *********/
+
 		watch: {
 			compass: {
 				files: ['<%= project.source %>/scss/**/*.{scss,sass}'],
@@ -72,6 +75,9 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+
+		/********* JS *********/
+
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
@@ -81,6 +87,9 @@ module.exports = function (grunt) {
 				'<%= project.source %>/js/**/*.js'
 			]
 		},
+
+		/********* SCSS *********/
+
 		compass: {
 			options: {
 				config: '<%= project.source %>/scss/config.rb'
@@ -92,21 +101,13 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+
+		/********* BUILD *********/
+
 		clean: {
 			deploy: '<%= project.deploy %>/*',
 			server: '<%= project.deploy %>/*'
 		},
-		imagemin: {
-			deploy: {
-				files: [{
-					expand: true,
-					cwd: '<%= project.source %>/img',
-					src: '{,*/}*.{png,jpg,jpeg}',
-					dest: '<%= project.deploy %>/img'
-				}]
-			}
-		},
-		// Put files not handled in other tasks here
 		copy: {
 			deploy: {
 				files: [{
@@ -117,7 +118,7 @@ module.exports = function (grunt) {
 					src: [
 						'*.{ico,txt}',
 						'.htaccess',
-						'img/{,*/}*.{webp,gif}',
+						'img/{,*/}*.{png,jpg,jpeg,webp,gif}',
 						'fonts/*',
 						'lib/**/*.js'
 					]

@@ -35,12 +35,9 @@ RedStaticGenerator.prototype.askFor = function askFor() {
 	}.bind(this));
 };
 
-RedStaticGenerator.prototype.app = function app() {
+RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 	this.template('_package.json', 'package.json');
 	this.template('_bower.json', 'bower.json');
-};
-
-RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 	this.copy('bowerrc', '.bowerrc');
 	this.copy('editorconfig', '.editorconfig');
 	this.copy('gitattributes', '.gitattributes');
@@ -50,11 +47,8 @@ RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 };
 
 RedStaticGenerator.prototype.pages = function pages() {
-	this.mkdir('pages');
+	this.directory('pages');
 	this.template('pages/_base.html', 'pages/_base.html');
-	this.copy('pages/index.html', 'pages/index.html');
-	this.copy('pages/404.html', 'pages/404.html');
-	this.copy('pages/500.html', 'pages/500.html');
 };
 
 RedStaticGenerator.prototype.staticDir = function staticDir() {
@@ -66,28 +60,5 @@ RedStaticGenerator.prototype.staticDir = function staticDir() {
 };
 
 RedStaticGenerator.prototype.scss = function scss() {
-	this.mkdir('static');
-
-	this.mkdir('static/scss');
-	this.copy('static/scss/style.scss', 'static/scss/style.scss');
-	this.copy('static/scss/config.rb', 'static/scss/config.rb');
-
-	this.mkdir('static/scss/pages');
-	this.copy('static/scss/pages/all.scss', 'static/scss/pages/__all.scss');
-	this.copy('static/scss/pages/index.scss', 'static/scss/pages/_index.scss');
-
-	this.mkdir('static/scss/base');
-	this.copy('static/scss/base/body.scss', 'static/scss/base/_body.scss');
-	this.copy('static/scss/base/header.scss', 'static/scss/base/_header.scss');
-	this.copy('static/scss/base/footer.scss', 'static/scss/base/_footer.scss');
-
-	this.mkdir('static/scss/fonts');
-	this.copy('static/scss/fonts/all.scss', 'static/scss/fonts/__all.scss');
-	this.copy('static/scss/fonts/icons.scss', 'static/scss/fonts/_icons.scss');
-
-	this.mkdir('static/scss/mixins');
-	this.copy('static/scss/mixins/mixins.scss', 'static/scss/mixins/_mixins.scss');
-
-	this.mkdir('static/scss/placeholders');
-	this.copy('static/scss/placeholders/placeholders.scss', 'static/scss/placeholders/_placeholders.scss');
+	this.directory('static/scss');
 };

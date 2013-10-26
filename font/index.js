@@ -67,21 +67,12 @@ FontGenerator.prototype.askFor = function askFor() {
 };
 
 FontGenerator.prototype.files = function files() {
+	console.log('Don\'t forget to add these fonts to your style.scss');
+
 	this.selectedFonts.forEach(function (file) {
 		var font = new Font(path.join(this.root, this.actualPathMap[file]));
 		font.save('static/fonts', this.includeSVG);
 		this.template('_font.scss', 'static/scss/fonts/_' + font.slug + '.scss', font);
+		console.log('@include "fonts/' +  font.slug + '";');
 	}.bind(this));
-};
-
-FontGenerator.prototype.updateAllPagesScss = function files() {
-	var base = 'static/scss/fonts/';
-	var fonts = this.expand(base + '*.scss').map(function (file) {
-		return file.replace(base, '').replace(/^_+/, '').replace('.scss', '');
-	}).filter(function (file) {
-		return file !== 'all';
-	});
-	var content = '@import "' + fonts.join('",\n\t\t"') + '";';
-
-	this.write('static/scss/fonts/__all.scss', content);
 };
