@@ -132,7 +132,6 @@ module.exports = function (grunt) {
 			],
 			deploy: [
 				'compass:deploy',
-				'imagemin:deploy',
 				'haychtml:deploy'
 			]
 		}
