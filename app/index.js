@@ -44,6 +44,7 @@ RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 	this.copy('gitignore', '.gitignore');
 	this.copy('Gruntfile.js', 'Gruntfile.js');
 	this.copy('jshintrc', '.jshintrc');
+	this.directory('grunt', 'grunt');
 };
 
 RedStaticGenerator.prototype.pages = function pages() {
