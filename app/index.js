@@ -2,17 +2,22 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var _ = require('underscore.string');
 
-
-var RedStaticGenerator = module.exports = function RedStaticGenerator(args, options, config) {
+function RedStaticGenerator(args, options, config) {
 	yeoman.generators.Base.apply(this, arguments);
 
-	this.on('end', function () {
-		this.installDependencies({ skipInstall: options['skip-install'] });
+	this.once('end', function () {
+		this.installDependencies({
+			skipInstall: options['skip-install'],
+			bower: false
+		});
 	});
 
 	this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
-};
+}
+
+module.exports = RedStaticGenerator;
 
 util.inherits(RedStaticGenerator, yeoman.generators.Base);
 
@@ -25,7 +30,7 @@ RedStaticGenerator.prototype.askFor = function askFor() {
 	var prompts = [{
 		name: 'projectName',
 		message: 'What do you want to call your project?',
-		default: 'My cool project'
+		default: _.titleize(_.humanize(path.basename(this.env.cwd)))
 	}];
 
 	this.prompt(prompts, function (props) {

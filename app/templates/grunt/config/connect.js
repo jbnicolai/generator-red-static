@@ -1,10 +1,10 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+var path = require("path");
 
-	var PATH = require("path"),
-		LIVERELOAD = require('connect-livereload')({ port: config.livereloadPort });
+module.exports = function (config) {
+	var LIVERELOAD = require('connect-livereload')({ port: config.livereloadPort });
 
 	return {
 		options: {
@@ -16,10 +16,11 @@ module.exports = function(config) {
 				middleware: function (connect) {
 					return [
 						LIVERELOAD,
-						connect.static(PATH.resolve('.', config.deploy))
+						connect.static(path.resolve('.', config.deploy)),
+						connect.static(path.resolve('.'))
 					];
 				}
 			}
 		}
-	}
+	};
 };

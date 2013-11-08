@@ -1,15 +1,18 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/gruntjs/grunt-contrib-watch
 
+// Run tasks whenever files are changed, added, or deleted.
+
+module.exports = function (config) {
 	return {
 		compass: {
-			files: [config.source + '/scss/**/*.{scss,sass}'],
-			tasks: ['compass:server']
+			files: [config.source + 'scss/**/*.{scss,sass}'],
+			tasks: ['compass:develop']
 		},
 		haychtml: {
-			files: [config.pages + '/*.html'],
+			files: [config.pages + '*.html'],
 			tasks: ['haychtml']
 		},
 		livereload: {
@@ -17,9 +20,10 @@ module.exports = function(config) {
 				livereload: config.livereloadPort
 			},
 			files: [
-				config.deploy + '/*.html',
-				config.deploy + '/static/{,*/}*.{css,js,png,jpg,jpeg,gif,webp,svg}'
+				config.deploy + '*.html',
+				config.deploy + 'static/{,*/}*.{css,js,png,jpg,jpeg,gif,webp,svg}',
+				config.source + '{,*/}*.{css,js,png,jpg,jpeg,gif,webp,svg}'
 			]
 		}
-	}
+	};
 };

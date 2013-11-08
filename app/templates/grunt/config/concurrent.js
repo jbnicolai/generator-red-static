@@ -1,16 +1,22 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/sindresorhus/grunt-concurrent
 
+// Run grunt tasks concurrently.
+
+module.exports = function () {
 	return {
-		server: [
-			'compass:server',
-			'haychtml:deploy'
+		options: {
+			logConcurrentOutput: true
+		},
+		develop : [
+			'compass:develop',
+			'haychtml:build'
 		],
-		deploy: [
-			'compass:deploy',
-			'haychtml:deploy'
+		build : [
+			'compass:build',
+			'jshint',
 		]
-	}
+	};
 };

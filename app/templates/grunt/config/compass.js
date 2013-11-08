@@ -1,17 +1,21 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/gruntjs/grunt-contrib-compass
 
+// Compile Sass to CSS using Compass.
+// Most options should be specified in project/source/scss/config.rb
+
+module.exports = function (config) {
 	return {
 		options: {
-			config: config.source + '/scss/config.rb'
+			config: config.source + 'scss/config.rb'
 		},
-		deploy: {},
-		server: {
+		build: {},
+		develop: {
 			options: {
-				outputStyle: "expanded"
+				outputStyle: 'expanded'
 			}
 		}
-	}
+	};
 };

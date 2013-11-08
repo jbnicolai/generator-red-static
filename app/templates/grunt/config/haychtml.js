@@ -1,10 +1,13 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/timrwood/haychtml
 
+// Compiles html templates.
+
+module.exports = function (config) {
 	return {
-		deploy : {
+		build : {
 			engine: 'swig',
 			src: config.pages,
 			dest: config.deploy,
@@ -12,5 +15,5 @@ module.exports = function(config) {
 				STATIC_URL : '/static/'
 			}
 		}
-	}
+	};
 };

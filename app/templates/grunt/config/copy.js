@@ -1,23 +1,26 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/gruntjs/grunt-contrib-copy
 
+// Copy files and folders.
+
+module.exports = function (config) {
 	return {
-		deploy: {
+		build: {
 			files: [{
 				expand: true,
 				dot: true,
 				cwd: config.source,
-				dest: config.deploy + '/static',
+				dest: config.deploy + 'static/',
 				src: [
 					'*.{ico,txt}',
 					'.htaccess',
-					'img/{,*/}*.{png,jpg,jpeg,webp,gif}',
+					'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
 					'fonts/*',
 					'lib/**/*.js'
 				]
 			}]
 		}
-	}
+	};
 };

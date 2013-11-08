@@ -1,10 +1,12 @@
 /*jshint node:true*/
 'use strict';
 
-module.exports = function(config) {
+// https://github.com/gruntjs/grunt-contrib-clean
 
+// Cleans folders and files.
+
+module.exports = function (config) {
 	return {
-		deploy: config.deploy,
-		server: config.deploy + '/*'
-	}
+		build: config.deploy + '*'
+	};
 };
