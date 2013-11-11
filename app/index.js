@@ -1,10 +1,11 @@
 'use strict';
-var util = require('util');
-var path = require('path');
-var yeoman = require('yeoman-generator');
-var _ = require('underscore.string');
+var util = require('util'),
+	path = require('path'),
+	yeoman = require('yeoman-generator'),
+	_ = require('underscore.string'),
+	LOGO = require('./logo');
 
-function RedStaticGenerator(args, options, config) {
+function RedStaticGenerator(args, options) {
 	yeoman.generators.Base.apply(this, arguments);
 
 	this.once('end', function () {
@@ -24,12 +25,11 @@ util.inherits(RedStaticGenerator, yeoman.generators.Base);
 RedStaticGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
-	// have Yeoman greet the user.
-	console.log(this.yeoman);
+	console.log(LOGO);
 
 	var prompts = [{
 		name: 'projectName',
-		message: 'What do you want to call your project?',
+		message: 'What is the project called?',
 		default: _.titleize(_.humanize(path.basename(this.env.cwd)))
 	}];
 

@@ -1,28 +1,29 @@
 {
   "name": "generator-red-static",
   "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "description": "RED Interactive's Yeoman generator for static sites.",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/timrwood/generator-red-static",
-  "bugs": "https://github.com/timrwood/generator-red-static/issues",
+  "homepage": "https://github.com/ff0000/generator-red-static",
+  "bugs": "https://github.com/ff0000/generator-red-static/issues",
   "author": {
-    "name": "Tim Wood",
+    "name": "RED Interactive Agency",
     "email": "",
-    "url": "https://github.com/timrwood"
+    "url": "https://github.com/ff0000"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/timrwood/generator-red-static.git"
+    "url": "git://github.com/ff0000/generator-red-static.git"
   },
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
     "yeoman-generator": "~0.13.0",
-    "underscore.string": "~2.3.1"
+    "underscore.string": "~2.3.1",
+    "chalk": "~0.3.0"
   },
   "devDependencies": {
     "mocha": "~1.12.0"
