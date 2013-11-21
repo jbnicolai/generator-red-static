@@ -1,11 +1,13 @@
 /*jshint node:true*/
 'use strict';
 
-var path = require("path");
+// https://github.com/gruntjs/grunt-contrib-connect
+
+// Start a connect web server.
+
+var path = require('path');
 
 module.exports = function (config) {
-	var LIVERELOAD = require('connect-livereload')({ port: config.livereloadPort });
-
 	return {
 		options: {
 			port: 8000,
@@ -15,7 +17,9 @@ module.exports = function (config) {
 			options: {
 				middleware: function (connect) {
 					return [
-						LIVERELOAD,
+						require('connect-livereload')({
+							port: config.livereloadPort
+						}),
 						connect.static(path.resolve('.', config.deploy)),
 						connect.static(path.resolve('.'))
 					];

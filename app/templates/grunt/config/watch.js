@@ -8,9 +8,6 @@
 module.exports = function (config) {
 	return {
 		compass: {
-			options: {
-				spawn: false,
-			},
 			files: [config.source + 'scss/{,**/}{,*.scss,*.sass}'],
 			tasks: ['compass:develop']
 		},

@@ -37,7 +37,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('server', function (target) {
 		if (target) {
-			grunt.config('watch.livereload.options.livereload', +target + 30000);
+			CONFIG.livereloadPort = +target + 30000;
+			grunt.config('watch.livereload.options.livereload', CONFIG.livereloadPort);
 			grunt.config('connect.options.port', target);
 		}
 
