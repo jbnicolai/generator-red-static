@@ -12,13 +12,12 @@ module.exports = function (config) {
 				expand: true,
 				dot: true,
 				cwd: config.source,
-				dest: config.deploy + 'static/',
+				dest: config.static,
 				src: [
 					'*.{ico,txt}',
 					'.htaccess',
 					'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
-					'fonts/*',
-					'lib/**/*.js'
+					'fonts/*'
 				]
 			}]
 		}

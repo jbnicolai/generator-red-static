@@ -1,46 +1,43 @@
-# generator-red-static [![Build Status](https://secure.travis-ci.org/timrwood/generator-red-static.png?branch=master)](https://travis-ci.org/timrwood/generator-red-static)
+# RED Django Generator
 
-A generator for [Yeoman](http://yeoman.io).
+RED Interactive's [Yeoman](http://yeoman.io) generator for static site projects.
 
+## Frontend stack
 
-## Getting Started
+* SASS + Compass
+* Ember
+* Ember Model
 
-### What is Yeoman?
+## Dependencies
 
-Trick question. It's not a thing. It's this guy:
+You should have one path for each dependency.
 
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```
-$ npm install -g yo
+```sh
+which node npm grunt yo
+which ruby gem compass
 ```
 
-### Yeoman Generators
+## Installation
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-red-static from npm, run:
-
-```
-$ npm install -g generator-red-static
+```sh
+npm install -g generator-red-static
 ```
 
-Finally, initiate the generator:
+## Usage
 
+```sh
+mkdir example && cd example
+yo red-static
+grunt server
 ```
-$ yo red-static
-```
 
-### Getting To Know Yeoman
+## Contributing
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+See the [contributing guidelines](https://github.com/ff0000/generator-red-static/blob/master/contributing.md).
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+## Changelog
 
+See the [changelog](https://github.com/ff0000/generator-red-static/blob/master/changelog.md).
 
 ## License
 

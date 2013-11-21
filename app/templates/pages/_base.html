@@ -6,27 +6,20 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>{% block title %}<%= projectName %>{% endblock title %}</title>
+		<title><%= projectName %> | {% block title %}Home{% endblock title %}</title>
 
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		{# Place favicon.ico and apple-touch-icon.png in the root directory #}
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
-	</head>
-	<body class="page page-{% block page_name %}{% endblock page_name %}">
-		<div id="container">
-			<header>
-				<nav role="navigation">
-					<a href="/">Home</a>
-				</nav>
-			</header>
-			<div id="main" role="main">
-				{% block content %}{% endblock content %}
-			</div>
-		</div>
 
-		<script src="{{ STATIC_URL }}lib/jquery/jquery.js"></script>
-		<script src="{{ STATIC_URL }}js/app.js"></script>
+		{# All JavaScript at the bottom, except for Modernizr. #}
+		<script src="{{ STATIC_URL }}lib/modernizr/modernizr.js"></script>
+	</head>
+	<body>
+		<script src="{{ STATIC_URL }}js/libs.develop.js"></script>
+		<script src="{{ STATIC_URL }}js/templates.develop.js"></script>
+		<script src="{{ STATIC_URL }}js/app.develop.js"></script>
 	</body>
 </html>

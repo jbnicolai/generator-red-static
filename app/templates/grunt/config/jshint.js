@@ -13,8 +13,8 @@ module.exports = function (config) {
 		},
 		all: [
 			'Gruntfile.js',
-			'grunt/{,*/}*.js',
-			config.source + 'js/{,*/}*.js'
+			'grunt/{,**/}*.js',
+			config.source + 'js/{,**/}*.js'
 		]
 	};
 };

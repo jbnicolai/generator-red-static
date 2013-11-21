@@ -1,0 +1,13 @@
+<div id="container">
+	<header>
+		<h1>
+			{{#linkTo index}}<%= projectName %>{{/linkTo}}
+		</h1>
+		<nav role="navigation">
+			{{#linkTo index}}Home{{/linkTo}}
+		</nav>
+	</header>
+	<div id="main" role="main">
+		{{outlet}}
+	</div>
+</div>

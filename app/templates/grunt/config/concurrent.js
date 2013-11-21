@@ -11,10 +11,16 @@ module.exports = function () {
 			logConcurrentOutput: true
 		},
 		develop : [
-			'compass:develop',
+			'neuter:libsDevelop',
+			'neuter:app',
+			'emberTemplates',
+			'compass:build',
 			'haychtml:build'
 		],
 		build : [
+			'neuter:libsBuild',
+			'neuter:app',
+			'emberTemplates',
 			'compass:build',
 			'jshint',
 		]

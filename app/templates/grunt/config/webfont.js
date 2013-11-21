@@ -12,7 +12,7 @@
 module.exports = function (config) {
 	return {
 		icons: {
-			src: config.source + 'icons/*.svg',
+			src: config.source + 'icons/*.{svg,eps}',
 			dest: config.source + 'fonts',
 			destCss: config.source +  'scss/fonts',
 			options: {
