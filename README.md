@@ -1,4 +1,4 @@
-# RED Django Generator
+# RED Static Site Generator
 
 RED Interactive's [Yeoman](http://yeoman.io) generator for static site projects.
 
