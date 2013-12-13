@@ -15,13 +15,13 @@
     "grunt-open": "~0.2.0",
     "grunt-concurrent": "~0.4.1",
     "grunt-ember-templates": "~0.4.16",
+    "grunt-haychtml": "~0.1.0",
     "grunt-neuter": "~0.6.0",
     "grunt-notify": "~0.2.16",
     "grunt-webfont": "~0.2.0",
     "time-grunt": "~0.2.1",
     "load-grunt-tasks": "~0.2.0",
     "connect-livereload": "~0.3.0",
-    "haychtml": "https://github.com/timrwood/haychtml/tarball/master",
     "swig": "~1.1.0"
   },
   "engines": {
