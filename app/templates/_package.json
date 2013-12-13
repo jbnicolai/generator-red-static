@@ -15,7 +15,7 @@
     "grunt-open": "~0.2.0",
     "grunt-concurrent": "~0.4.1",
     "grunt-ember-templates": "~0.4.16",
-    "grunt-haychtml": "~0.1.0",
+    "grunt-haychtml": "~0.1.1",
     "grunt-neuter": "~0.6.0",
     "grunt-notify": "~0.2.16",
     "grunt-webfont": "~0.2.0",
