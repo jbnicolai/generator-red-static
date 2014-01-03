@@ -33,7 +33,7 @@ grunt server
 
 ## Updates
 
-Update a project to a newer version of this generator will update the `./grunt` folder, the `Gruntfile.js`, and the `package.json` devDependancies.
+Updating a project to a newer version of this generator will update the `./grunt` folder, the `Gruntfile.js`, and the `package.json` devDependencies.
 
 ```sh
 yo red-static:update
