@@ -31,6 +31,14 @@ yo red-static
 grunt server
 ```
 
+## Updates
+
+Update a project to a newer version of this generator will update the `./grunt` folder, the `Gruntfile.js`, and the `package.json` devDependancies.
+
+```sh
+yo red-static:update
+```
+
 ## Contributing
 
 See the [contributing guidelines](https://github.com/ff0000/generator-red-static/blob/master/contributing.md).
