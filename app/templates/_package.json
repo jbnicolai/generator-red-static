@@ -11,7 +11,12 @@
     "gulp-clean": "~0.2.2",
     "gulp-concat": "~2.1.7",
     "gulp-es6-module-transpiler": "git://github.com/jlamontagne/gulp-es6-module-transpiler.git#moduleName-changes",
-    "gulp-debug": "~0.1.2"
+    "gulp-debug": "~0.1.2",
+    "gulp-consolidate": "~0.1.0",
+    "gulp-ignore": "~0.0.2",
+    "gulp-minify-html": "~0.1.0",
+    "gulp-html-prettify": "~0.0.1",
+    "swig": "~1.2.2"
   },
   "engines": {
     "node": ">=0.8.0"
