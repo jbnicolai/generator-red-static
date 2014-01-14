@@ -85,6 +85,10 @@ RedStaticGenerator.prototype.jsDir = function jsDir() {
 	this.write(JS + 'views/.gitkeep', '');
 };
 
+RedStaticGenerator.prototype.libsDir = function libsDir() {
+	this.directory('static/lib');
+};
+
 RedStaticGenerator.prototype.emberTemplatesDir = function emberTemplatesDir() {
 	this.template('static/templates/application.hbs', 'static/templates/application.hbs');
 };

@@ -46,6 +46,7 @@ node_modules
 
 # Bower
 static/lib
+!static/lib/resolver.js
 
 # Sass
 .sass-cache

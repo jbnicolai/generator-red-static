@@ -10,8 +10,8 @@ var gulp = require('gulp'),
 
 gulp.task('html-clean', config.clean('**/*.html'));
 
-gulp.task('html', ['html-clean'], function (done) {
-	gulp.src('./pages/**/*.html')
+gulp.task('html', ['html-clean'], function () {
+	return gulp.src('./pages/**/*.html')
 		.pipe(ignore({
 			pattern : ['**/_**']
 		}))
@@ -27,6 +27,5 @@ gulp.task('html', ['html-clean'], function (done) {
 			conditionals: true
 		}))
 		.pipe(prettify())
-		.pipe(gulp.dest('./deploy'))
-		.on('end', done);
+		.pipe(gulp.dest('./deploy'));
 });

@@ -13,18 +13,16 @@ function destPath(file) {
 }
 
 function makeCleanTask(file) {
-	return function (done) {
-		gulp.src(destPath(file), {read: false})
-			.pipe(clean())
-			.on('end', done);
+	return function () {
+		return gulp.src(destPath(file), {read: false})
+			.pipe(clean());
 	};
 }
 
 function makeCopyTask(src, dest) {
-	return function (done) {
-		gulp.src(srcPath(src))
-			.pipe(gulp.dest(destPath(dest)))
-			.on('end', done);
+	return function () {
+		return gulp.src(srcPath(src))
+			.pipe(gulp.dest(destPath(dest)));
 	};
 }
 

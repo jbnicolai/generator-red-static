@@ -8,14 +8,13 @@ var gulp = require('gulp'),
 
 gulp.task('css-clean', config.clean('css/**/*'));
 
-gulp.task('css', ['css-clean'], function (done) {
-	gulp.src(config.src('scss/style.scss'))
+gulp.task('css', ['css-clean'], function () {
+	return gulp.src(config.src('scss/style.scss'))
 		.pipe(sass({
 			compass : true,
 			loadPath : './static/lib'
 		}))
 		.pipe(prefix('last 1 version', '> 1%'))
 		.pipe(csso())
-		.pipe(gulp.dest(config.dest('css')))
-		.on('end', done);
+		.pipe(gulp.dest(config.dest('css')));
 });
