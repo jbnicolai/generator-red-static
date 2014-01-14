@@ -1,9 +1,12 @@
-var <%= _.classify(projectName) %> = window.<%= _.classify(projectName) %> = Ember.Application.create();
+import Resolver from 'resolver';
 
-require('js/mixins/*');
-require('js/controllers/*');
-require('js/models/*');
-require('js/routes/*');
-require('js/components/*');
-require('js/views/*');
-require('js/router');
+var App = Ember.Application.extend({
+	LOG_ACTIVE_GENERATION: true,
+	LOG_MODULE_RESOLVER: true,
+	LOG_TRANSITIONS: true,
+	LOG_TRANSITIONS_INTERNAL: true,
+	LOG_VIEW_LOOKUPS: true,
+	Resolver: Resolver['default']
+});
+
+export default App;

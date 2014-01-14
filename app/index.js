@@ -49,12 +49,12 @@ RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 	this.copy('editorconfig', '.editorconfig');
 	this.copy('gitattributes', '.gitattributes');
 	this.copy('gitignore', '.gitignore');
-	this.copy('Gruntfile.js', 'Gruntfile.js');
+	this.copy('Gemfile', 'Gemfile');
+	this.copy('gulpfile.js', 'gulpfile.js');
 };
 
-RedStaticGenerator.prototype.gruntDir = function gruntDir() {
-	this.directory('grunt');
-	this.write('grunt/tasks/.gitkeep', '');
+RedStaticGenerator.prototype.gulpDir = function gulpDir() {
+	this.directory('gulp');
 };
 
 RedStaticGenerator.prototype.pages = function pages() {
@@ -77,7 +77,6 @@ RedStaticGenerator.prototype.jsDir = function jsDir() {
 	var JS = 'static/js/';
 	this.template(JS + 'app.js',    JS + 'app.js');
 	this.template(JS + 'router.js', JS + 'router.js');
-	this.copy(JS + 'libs.js',       JS + 'libs.js');
 	this.write(JS + 'components/.gitkeep', '');
 	this.write(JS + 'controllers/.gitkeep', '');
 	this.write(JS + 'mixins/.gitkeep', '');

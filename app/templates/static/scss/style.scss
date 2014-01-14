@@ -1,11 +1,6 @@
-$experimental-support-for-opera: false !default;
-$experimental-support-for-khtml: false !default;
-$legacy-support-for-ie6: false !default;
-$legacy-support-for-ie7: false !default;
-
 @import
-	"../lib/caboose/caboose",
-	"../lib/caboose/src/caboose/reset",
+	"caboose/caboose",
+	"caboose/src/caboose/reset",
 
 	"mixins/mixins",
 

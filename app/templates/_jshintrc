@@ -23,6 +23,7 @@
     "eqnull": false,
     "evil": false,
     "expr": false,
+    "esnext": true,
     "forin": false,
     "immed": true,
     "latedef": true,

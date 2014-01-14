@@ -7,7 +7,9 @@
     "caboose": "~2.6.0",
     "ember": "~1.1.2",
     "ember-model": "~0.0.10",
-    "modernizr": "~2.6.3"
+    "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
+    "modernizr": "~2.6.3",
+    "almond": "~0.2.9"
   },
   "resolutions": {
     "ember": "~1.1.2"
