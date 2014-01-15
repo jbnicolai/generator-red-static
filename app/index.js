@@ -25,19 +25,25 @@ util.inherits(RedStaticGenerator, yeoman.generators.Base);
 RedStaticGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
-	console.log(LOGO);
+	this.projectName = _.titleize(_.humanize(path.basename(this.env.cwd)));
 
 	var prompts = [{
 		name: 'projectName',
 		message: 'What is the project called?',
-		default: _.titleize(_.humanize(path.basename(this.env.cwd)))
+		default: this.projectName
 	}];
 
-	this.prompt(prompts, function (props) {
-		this.projectName = props.projectName;
-
+	if (this.options.force) {
 		cb();
-	}.bind(this));
+	} else {
+		console.log(LOGO);
+
+		this.prompt(prompts, function (props) {
+			this.projectName = props.projectName;
+
+			cb();
+		}.bind(this));
+	}
 };
 
 RedStaticGenerator.prototype.projectfiles = function projectfiles() {

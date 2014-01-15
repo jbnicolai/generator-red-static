@@ -4,11 +4,13 @@ var gulp = require('gulp'),
 	path = require('path'),
 	consolidate = require('gulp-consolidate'),
 	ignore = require('gulp-ignore'),
-	config = require('./config'),
+	common = require('./common'),
+	gulpif = require('gulp-if'),
 	minify = require('gulp-minify-html'),
 	prettify = require('gulp-html-prettify');
 
-gulp.task('html-clean', config.clean('**/*.html'));
+common.clean('html', '../**/*.html');
+common.watch('html', '../pages/**/*.html');
 
 gulp.task('html', ['html-clean'], function () {
 	return gulp.src('./pages/**/*.html')
@@ -18,14 +20,12 @@ gulp.task('html', ['html-clean'], function () {
 		.pipe(consolidate('swig', function (file) {
 			var URL = path.join(path.dirname(file.path), '..');
 			return {
-				STATIC_URL : path.relative(URL, config.src('')) + '/'
+				STATIC_URL : path.relative(URL, common.src('')) + '/'
 			};
-		}, {
-			usePath : true
 		}))
 		.pipe(minify({
 			conditionals: true
 		}))
-		.pipe(prettify())
+		.pipe(gulpif(!common.minify, prettify()))
 		.pipe(gulp.dest('./deploy'));
 });

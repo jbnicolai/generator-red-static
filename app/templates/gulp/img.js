@@ -1,8 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-	config = require('./config');
+var common = require('./common');
 
-gulp.task('img-clean', config.clean('img/**/*'));
-
-gulp.task('img', ['img-clean'], config.copy('img/**/*', 'img'));
+common.clean('img', 'img/**/*');
+common.watch('img', 'img/**/*');
+common.copy('img', 'img/**/*', 'img');

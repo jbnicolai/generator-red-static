@@ -1,8 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-	config = require('./config');
+var common = require('./common');
 
-gulp.task('font-clean', config.clean('fonts/**/*'));
-
-gulp.task('font', ['font-clean'], config.copy('fonts/**/*', 'fonts'));
+common.clean('font', 'fonts/**/*');
+common.watch('font', 'fonts/**/*');
+common.copy('font', 'fonts/**/*', 'fonts');

@@ -1,13 +1,24 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+	common = require('./gulp/common');
 
-require('./gulp/css');
-require('./gulp/font');
-require('./gulp/html');
-require('./gulp/img');
-require('./gulp/js');
-
-gulp.task('default', function (done) {
-	gulp.run('css', 'js', 'img', 'font', 'html', done);
+var types = 'css js img font html libs'.split(' ');
+var watch = types.map(function (type) {
+	return type + '-watch';
 });
+
+types.forEach(function (type) {
+	require('./gulp/' + type);
+});
+
+gulp.task('watch', types, function () {
+	gulp.run.apply(gulp, watch);
+});
+
+gulp.task('build', function () {
+	common.minify = true;
+	gulp.run.apply(gulp, types);
+});
+
+gulp.task('default', ['build']);

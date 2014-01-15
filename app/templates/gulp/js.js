@@ -1,15 +1,17 @@
 'use strict';
 
 var gulp = require('gulp'),
-	config = require('./config'),
+	common = require('./common'),
 	concat = require('gulp-concat'),
-	libs = require('./libs'),
+	uglify = require('gulp-uglify'),
+	gulpif = require('gulp-if'),
 	transpiler = require('gulp-es6-module-transpiler');
 
-gulp.task('js-clean', config.clean('js/app.js'));
+common.clean('js', 'js/app.js');
+common.watch('js', 'js/**/*.js');
 
 gulp.task('js', ['js-clean'], function () {
-	return gulp.src(config.src('js/**/*.js'))
+	return gulp.src(common.src('js/**/*.js'))
 		.pipe(transpiler({
 			type: 'amd',
 			moduleName: function (name) {
@@ -17,17 +19,6 @@ gulp.task('js', ['js-clean'], function () {
 			}
 		}))
 		.pipe(concat('app.js'))
-		.pipe(gulp.dest(config.dest('js')));
-});
-
-gulp.task('libs-clean', config.clean('js/app.js'));
-
-gulp.task('libs', function () {
-	return gulp.src(libs().map(function (file) {
-			return config.src('lib/' + file);
-		}), {
-			base : config.src('.')
-		})
-		.pipe(concat('libs.js'))
-		.pipe(gulp.dest(config.dest('js')));
+		.pipe(gulpif(common.minify, uglify()))
+		.pipe(gulp.dest(common.dest('js')));
 });
