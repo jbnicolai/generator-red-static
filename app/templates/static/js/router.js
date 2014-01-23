@@ -1,7 +1,4 @@
-var Router = Ember.Router.extend();
-
-Router.map(function() {
+App.Router = Ember.Router.extend();
+App.Router.map(function() {
 	// Add routes here.
 });
-
-export default Router;

@@ -47,12 +47,12 @@
     "white": true,
     "indent": 4,
     "globals": {
-        "<%= _.classify(projectName) %>" : true,
-        "jQuery": true,
-        "$": true,
-        "Ember": true,
-        "Em": true,
-        "Handlebars": true,
-        "require": true
+        "App" : true,
+        "jQuery": false,
+        "$": false,
+        "Ember": false,
+        "Em": false,
+        "Handlebars": false,
+        "include": false
     }
 }

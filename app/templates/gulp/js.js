@@ -2,23 +2,18 @@
 
 var gulp = require('gulp'),
 	common = require('./common'),
-	concat = require('gulp-concat'),
+	includer = require('gulp-includer'),
 	uglify = require('gulp-uglify'),
-	gulpif = require('gulp-if'),
-	transpiler = require('gulp-es6-module-transpiler');
+	gulpif = require('gulp-if');
 
 common.clean('js', 'js/app.js');
 common.watch('js', 'js/**/*.js');
 
 gulp.task('js', ['js-clean'], function () {
-	return gulp.src(common.src('js/**/*.js'))
-		.pipe(transpiler({
-			type: 'amd',
-			moduleName: function (name) {
-				return 'app/' + name;
-			}
+	return gulp.src(common.src('js/{app,libs}.js'))
+		.pipe(includer({
+			debug : true
 		}))
-		.pipe(concat('app.js'))
 		.pipe(gulpif(common.minify, uglify()))
 		.pipe(gulp.dest(common.dest('js')));
 });

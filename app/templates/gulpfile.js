@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
 	common = require('./gulp/common');
 
-var types = 'css js img font html libs'.split(' ');
+var types = 'css js img font html'.split(' ');
 var watch = types.map(function (type) {
 	return type + '-watch';
 });

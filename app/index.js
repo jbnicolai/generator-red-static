@@ -50,7 +50,7 @@ RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 	this.template('_package.json', 'package.json');
 	this.template('_bower.json', 'bower.json');
 	this.template('_README.md', 'README.md');
-	this.template('_jshintrc', '.jshintrc');
+	this.copy('jshintrc', '.jshintrc');
 	this.copy('bowerrc', '.bowerrc');
 	this.copy('editorconfig', '.editorconfig');
 	this.copy('gitattributes', '.gitattributes');
@@ -81,18 +81,13 @@ RedStaticGenerator.prototype.scssDir = function scssDir() {
 
 RedStaticGenerator.prototype.jsDir = function jsDir() {
 	var JS = 'static/js/';
-	this.template(JS + 'app.js',    JS + 'app.js');
-	this.template(JS + 'router.js', JS + 'router.js');
+	this.directory(JS);
 	this.write(JS + 'components/.gitkeep', '');
 	this.write(JS + 'controllers/.gitkeep', '');
 	this.write(JS + 'mixins/.gitkeep', '');
 	this.write(JS + 'models/.gitkeep', '');
 	this.write(JS + 'routes/.gitkeep', '');
 	this.write(JS + 'views/.gitkeep', '');
-};
-
-RedStaticGenerator.prototype.libsDir = function libsDir() {
-	this.directory('static/lib');
 };
 
 RedStaticGenerator.prototype.emberTemplatesDir = function emberTemplatesDir() {
