@@ -23,6 +23,10 @@ module.exports = function (config) {
 			files: [config.source + 'js/{,**/}{,*.js}'],
 			tasks: ['neuter:app']
 		},
+		neuterLibs: {
+			files: [config.source + 'js/libs.js}'],
+			tasks: ['neuter:libsDevelop']
+		},
 		livereload: {
 			options: {
 				livereload: 38000
