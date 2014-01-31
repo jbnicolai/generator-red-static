@@ -18,7 +18,6 @@ module.exports = function (grunt) {
 	[
 		'clean',
 		'compass',
-		'concurrent',
 		'connect',
 		'copy',
 		'emberTemplates',
@@ -34,32 +33,66 @@ module.exports = function (grunt) {
 		grunt.config(key, require('./grunt/config/' + key)(CONFIG));
 	});
 
-	grunt.registerTask('server', function (target) {
-		if (target) {
-			CONFIG.livereloadPort = +target + 30000;
+	grunt.registerTask('server', function (port) {
+		if (port) {
+			CONFIG.livereloadPort = +port + 30000;
 			grunt.config('watch.livereload.options.livereload', CONFIG.livereloadPort);
-			grunt.config('connect.options.port', target);
+			grunt.config('connect.options.port', port);
 		}
 
 		grunt.task.run([
-			'clean:build',
-			'concurrent:develop',
+			// Run tasks once before starting watchers
+			'develop',
+
+			// Start server
 			'connect:livereload',
 			'open',
+
+			// Watch files for changes
 			'watch'
 		]);
 	});
 
+	// Build unminified files during development
+	grunt.registerTask('develop', [
+		'clean',
+
+		// JS
+		'neuter:libsDevelop',
+		'neuter:app',
+		'emberTemplates',
+
+		// CSS
+		'compass:develop',
+
+		// HTML
+		'haychtml:develop',
+
+		// OTHER FILES
+		'copy'
+	]);
+
+	// Build minified files for deployment
 	grunt.registerTask('build', [
-		'clean:build',
-		'concurrent:build',
+		'clean',
+
+		// JS
+		'jshint',
+		'neuter:libsBuild',
+		'neuter:app',
+		'emberTemplates',
 		'uglify',
-		'copy:build',
+
+		// CSS
+		'compass:build',
+
+		// HTML
+		'haychtml:build',
+
+		// OTHER FILES
+		'copy',
 		'notify:build'
 	]);
 
-	grunt.registerTask('default', [
-		'jshint',
-		'build'
-	]);
+	grunt.registerTask('default', ['build']);
 };
