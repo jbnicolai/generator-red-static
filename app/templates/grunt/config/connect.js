@@ -20,8 +20,7 @@ module.exports = function (config) {
 						require('connect-livereload')({
 							port: config.livereloadPort
 						}),
-						connect.static(path.resolve('.', config.deploy)),
-						connect.static(path.resolve('.'))
+						connect.static(path.resolve('.', config.deploy))
 					];
 				}
 			}
