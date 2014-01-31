@@ -17,7 +17,7 @@ module.exports = function (config) {
 		},
 		haychtml: {
 			files: [config.pages + '{,**/}*.html'],
-			tasks: ['haychtml']
+			tasks: ['haychtml:develop']
 		},
 		neuter: {
 			files: [config.source + 'js/{,**/}{,*.js}'],

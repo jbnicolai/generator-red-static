@@ -7,11 +7,21 @@
 
 module.exports = function (config) {
 	return {
+		develop : {
+			engine: 'swig',
+			src: config.pages,
+			dest: config.deploy,
+			data : {
+				TEMPLATE_DEBUG : true,
+				STATIC_URL : '/static/'
+			}
+		},
 		build : {
 			engine: 'swig',
 			src: config.pages,
 			dest: config.deploy,
 			data : {
+				TEMPLATE_DEBUG : false,
 				STATIC_URL : '/static/'
 			}
 		}
