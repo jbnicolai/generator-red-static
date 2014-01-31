@@ -46,7 +46,7 @@
     "white": true,
     "indent": 4,
     "globals": {
-        "<%= _.classify(projectName) %>" : true,
+        "App" : true,
         "jQuery": true,
         "$": true,
         "Ember": true,

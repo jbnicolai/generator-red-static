@@ -1,3 +1,3 @@
-<%= _.classify(projectName) %>.Router.map(function () {
+App.Router.map(function () {
 	// Add routes here.
 });

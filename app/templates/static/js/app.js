@@ -1,4 +1,4 @@
-var <%= _.classify(projectName) %> = window.<%= _.classify(projectName) %> = Ember.Application.create();
+var App = window.App = Ember.Application.create();
 
 require('js/mixins/*');
 require('js/controllers/*');
