@@ -25,7 +25,7 @@ module.exports = function (config) {
 		},
 		livereload: {
 			options: {
-				livereload: config.livereloadPort
+				livereload: 38000
 			},
 			files: [
 				config.deploy + '{,**/}*.html',

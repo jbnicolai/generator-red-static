@@ -5,8 +5,7 @@ var CONFIG = {
 	pages: 'pages/',
 	source: 'static/',
 	static: 'deploy/static/',
-	deploy: 'deploy/',
-	livereloadPort: 34567
+	deploy: 'deploy/'
 };
 
 module.exports = function (grunt) {
@@ -25,7 +24,6 @@ module.exports = function (grunt) {
 		'jshint',
 		'neuter',
 		'notify',
-		'open',
 		'uglify',
 		'watch',
 		'webfont'
@@ -34,9 +32,10 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('server', function (port) {
+		var livereloadPort = Math.round(port) + 30000;
 		if (port) {
-			CONFIG.livereloadPort = +port + 30000;
-			grunt.config('watch.livereload.options.livereload', CONFIG.livereloadPort);
+			grunt.config('watch.livereload.options.livereload', livereloadPort);
+			grunt.config('connect.options.livereload', livereloadPort);
 			grunt.config('connect.options.port', port);
 		}
 
@@ -45,8 +44,7 @@ module.exports = function (grunt) {
 			'develop',
 
 			// Start server
-			'connect:livereload',
-			'open',
+			'connect',
 
 			// Watch files for changes
 			'watch'
