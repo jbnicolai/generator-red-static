@@ -17,7 +17,8 @@ module.exports = function (config) {
 					'*.{ico,txt}',
 					'.htaccess',
 					'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
-					'fonts/*'
+					'fonts/*',
+					'lib/modernizr/modernizr.js'
 				]
 			}]
 		}

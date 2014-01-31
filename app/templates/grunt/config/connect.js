@@ -5,26 +5,15 @@
 
 // Start a connect web server.
 
-var path = require('path');
-
 module.exports = function (config) {
 	return {
 		options: {
 			port: 8000,
-			hostname: '0.0.0.0'
+			hostname: '*',
+			base: config.deploy,
+			livereload: 38000,
+			open: true
 		},
-		livereload: {
-			options: {
-				middleware: function (connect) {
-					return [
-						require('connect-livereload')({
-							port: config.livereloadPort
-						}),
-						connect.static(path.resolve('.', config.deploy)),
-						connect.static(path.resolve('.'))
-					];
-				}
-			}
-		}
+		develop: {}
 	};
 };

@@ -17,15 +17,19 @@ module.exports = function (config) {
 		},
 		haychtml: {
 			files: [config.pages + '{,**/}*.html'],
-			tasks: ['haychtml']
+			tasks: ['haychtml:develop']
 		},
 		neuter: {
 			files: [config.source + 'js/{,**/}{,*.js}'],
 			tasks: ['neuter:app']
 		},
+		neuterLibs: {
+			files: [config.source + 'js/libs.js}'],
+			tasks: ['neuter:libsDevelop']
+		},
 		livereload: {
 			options: {
-				livereload: config.livereloadPort
+				livereload: 38000
 			},
 			files: [
 				config.deploy + '{,**/}*.html',
