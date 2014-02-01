@@ -49,3 +49,4 @@ static/lib
 
 # Sass
 .sass-cache
+.temp

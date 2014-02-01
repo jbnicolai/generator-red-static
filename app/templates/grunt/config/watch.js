@@ -11,6 +11,10 @@ module.exports = function (config) {
 			files: [config.source + 'scss/{,**/}{,*.scss,*.sass}'],
 			tasks: ['compass:develop']
 		},
+		autoprefixer: {
+			files: ['.temp/**/*.css'],
+			tasks: ['autoprefixer']
+		},
 		emberTemplates: {
 			files: config.source + 'templates/{,**/}{,*.hbs}',
 			tasks: ['emberTemplates']

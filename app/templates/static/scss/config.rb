@@ -11,6 +11,6 @@ additional_import_paths = [source_dir + '/lib']
 
 # Destination Directories
 dest_dir             = 'deploy/static/'
-css_dir              = dest_dir + 'css/'
+css_dir              = '.temp/css/'
 fonts_dir            = dest_dir + 'fonts/'
 generated_images_dir = dest_dir + 'img/'

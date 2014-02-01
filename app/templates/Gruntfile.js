@@ -15,6 +15,7 @@ module.exports = function (grunt) {
 	grunt.loadTasks('grunt/tasks');
 
 	[
+		'autoprefixer',
 		'clean',
 		'compass',
 		'connect',
@@ -62,6 +63,7 @@ module.exports = function (grunt) {
 
 		// CSS
 		'compass:develop',
+		'autoprefixer',
 
 		// HTML
 		'haychtml:develop',
@@ -83,6 +85,7 @@ module.exports = function (grunt) {
 
 		// CSS
 		'compass:build',
+		'autoprefixer',
 
 		// HTML
 		'haychtml:build',
