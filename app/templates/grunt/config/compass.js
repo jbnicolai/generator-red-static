@@ -9,6 +9,7 @@
 module.exports = function (config) {
 	return {
 		options: {
+			force: true,
 			config: config.source + 'scss/config.rb'
 		},
 		build: {},
