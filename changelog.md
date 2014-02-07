@@ -7,6 +7,8 @@
 * Added separate `haychtml:build` and `haychtml:develop` tasks to allow deployed files to use minified javascript.
 * Added watcher for `static/js/libs.js`.
 * Added `grunt develop` task to build a development version of the project.
+* Added `grunt watch:copy` to continuously copy files during development.
+* Added `grunt-newer` to only copy changed files while watching.
 * Changed global js namespace to `App` instead of a project specific namespace.
 * Changed `config.rb` to use the correct `generated_images_dir` path.
 * Changed `config.rb` to include `static/lib` as an import path for easier importing of bower libs.
