@@ -24,7 +24,7 @@ module.exports = function (config) {
 			tasks: ['neuter:app']
 		},
 		neuterLibs: {
-			files: [config.source + 'js/libs.js}'],
+			files: [config.source + 'js/libs.js'],
 			tasks: ['neuter:libsDevelop']
 		},
 		copy : {
