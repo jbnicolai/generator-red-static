@@ -31,15 +31,16 @@ module.exports = function (config) {
 			files: [config.source + 'js/libs.js}'],
 			tasks: ['neuter:libsDevelop']
 		},
+		copy : {
+			files: '<%= copy.build.src %>',
+			tasks: ['newer:copy:build']
+		},
 		livereload: {
 			options: {
+				debounceDelay: 250,
 				livereload: 38000
 			},
-			files: [
-				config.deploy + '{,**/}*.html',
-				config.static + '{,**/}*.{css,js,png,jpg,jpeg,gif,webp,svg}',
-				config.source + '{,**/}*.{png,jpg,jpeg,gif,webp,svg}'
-			]
+			files: config.deploy + '**/*.{html,css,js,png,jpg,jpeg,gif,webp,svg}'
 		}
 	};
 };

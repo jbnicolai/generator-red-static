@@ -8,19 +8,15 @@
 module.exports = function (config) {
 	return {
 		build: {
-			files: [{
-				expand: true,
-				dot: true,
-				cwd: config.source,
-				dest: config.static,
-				src: [
-					'*.{ico,txt}',
-					'.htaccess',
-					'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
-					'fonts/*',
-					'lib/modernizr/modernizr.js'
-				]
-			}]
+			expand: true,
+			src: [
+				config.source + '*.{ico,txt}',
+				config.source + '.htaccess',
+				config.source + 'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
+				config.source + 'fonts/*',
+				config.source + 'lib/modernizr/modernizr.js'
+			],
+			dest: config.deploy
 		}
 	};
 };
