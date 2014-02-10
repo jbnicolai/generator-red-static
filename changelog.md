@@ -1,6 +1,10 @@
 ## History
 
-### `0.2.0` _2014-02-05_
+### `0.2.1` _2014-02-10_
+
+* Added `handlebars` bower dependency at `~1.3.0`.
+
+### `0.2.0` _2014-02-10_
 
 * Added `grunt-autoprefixer`. Prefixing CSS3 properties within `.scss` files is no longer necessary.
 * Added `lib/modernizr/modernizr.js` to the copy task.
