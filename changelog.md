@@ -13,7 +13,7 @@
 * Changed `config.rb` to use the correct `generated_images_dir` path.
 * Changed `config.rb` to include `static/lib` as an import path for easier importing of bower libs.
 * Updated `jQuery` from `~1.9.1` to `~1.10.2`.
-* Updated `ember` from `~1.1.2` to `~1.3.1`.
+* Updated `ember` from `~1.1.2` to `~1.3.2`.
 * Updated `ember-model` from `~0.0.10` to `~0.0.11`.
 * Updated `modernizr` from `~2.6.3` to `~2.7.1`.
 * Updated `grunt` from `~0.4.1` to `~0.4.2`.
