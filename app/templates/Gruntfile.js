@@ -1,104 +1,35 @@
 /*jshint node:true*/
 'use strict';
 
-var CONFIG = {
-	pages: 'pages/',
-	source: 'static/',
-	static: 'deploy/static/',
-	deploy: 'deploy/'
-};
-
 module.exports = function (grunt) {
 	require('time-grunt')(grunt);
 	require('load-grunt-tasks')(grunt);
 
-	grunt.loadTasks('grunt/tasks');
+	grunt.loadTasks('grunt');
 
-	[
-		'autoprefixer',
-		'clean',
-		'connect',
-		'copy',
-		'emberTemplates',
-		'haychtml',
-		'jshint',
-		'neuter',
-		'notify',
-		'sass',
-		'uglify',
-		'watch',
-		'webfont'
-	].forEach(function (key) {
-		grunt.config(key, require('./grunt/config/' + key)(CONFIG));
-	});
-
-	grunt.registerTask('server', function (port) {
-		var livereloadPort = Math.round(port) + 30000;
-		if (port) {
-			grunt.config('watch.livereload.options.livereload', livereloadPort);
-			grunt.config('connect.options.livereload', livereloadPort);
-			grunt.config('connect.options.port', port);
-		}
-
-		grunt.task.run([
-			// Run tasks once before starting watchers
-			'develop',
-
-			// Start server
-			'connect',
-
-			// Watch files for changes
-			'watch'
-		]);
+	grunt.config('paths', {
+		'pages'  : 'pages/',
+		'source' : 'static/',
+		'static' : 'deploy/static/',
+		'deploy' : 'deploy/'
 	});
 
 	// Build unminified files during development
 	grunt.registerTask('develop', [
-		'clean',
-
-		// JS
-		'neuter:libsDevelop',
-		'neuter:app',
-		'emberTemplates',
-
-		// CSS
-		'sass:develop',
-		'autoprefixer:develop',
-
-		// HTML
-		'haychtml:develop',
-
-		// OTHER FILES
-		'copy:develop',
-		'copy:build'
+		'pre_develop',
+		'js_develop',
+		'css_develop',
+		'html_develop',
+		'post_develop'
 	]);
 
 	// Build minified files for deployment
 	grunt.registerTask('build', [
-		'clean',
-
-		// JS
-		'jshint',
-		'neuter:libsBuild',
-		'neuter:app',
-		'emberTemplates',
-		'uglify',
-
-		// CSS
-		'sass:build',
-		'autoprefixer:build',
-
-		// HTML
-		'haychtml:build',
-
-		// OTHER FILES
-		'copy:build',
-
-		// TEMP FOLDER
-		'clean:temp',
-
-		// NOTIFICATION
-		'notify:build'
+		'pre_build',
+		'js_build',
+		'css_build',
+		'html_build',
+		'post_build'
 	]);
 
 	grunt.registerTask('default', ['build']);

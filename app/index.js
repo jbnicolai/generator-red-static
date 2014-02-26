@@ -54,7 +54,6 @@ RedStaticGenerator.prototype.projectfiles = function projectfiles() {
 
 RedStaticGenerator.prototype.gruntDir = function gruntDir() {
 	this.directory('grunt');
-	this.write('grunt/tasks/.gitkeep', '');
 };
 
 RedStaticGenerator.prototype.pages = function pages() {
