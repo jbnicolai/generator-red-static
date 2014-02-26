@@ -17,7 +17,6 @@ module.exports = function (grunt) {
 	[
 		'autoprefixer',
 		'clean',
-		'compass',
 		'connect',
 		'copy',
 		'emberTemplates',
@@ -25,6 +24,7 @@ module.exports = function (grunt) {
 		'jshint',
 		'neuter',
 		'notify',
+		'sass',
 		'uglify',
 		'watch',
 		'webfont'
@@ -62,14 +62,15 @@ module.exports = function (grunt) {
 		'emberTemplates',
 
 		// CSS
-		'compass:develop',
-		'autoprefixer',
+		'sass:develop',
+		'autoprefixer:develop',
 
 		// HTML
 		'haychtml:develop',
 
 		// OTHER FILES
-		'copy'
+		'copy:develop',
+		'copy:build'
 	]);
 
 	// Build minified files for deployment
@@ -84,14 +85,19 @@ module.exports = function (grunt) {
 		'uglify',
 
 		// CSS
-		'compass:build',
-		'autoprefixer',
+		'sass:build',
+		'autoprefixer:build',
 
 		// HTML
 		'haychtml:build',
 
 		// OTHER FILES
-		'copy',
+		'copy:build',
+
+		// TEMP FOLDER
+		'clean:temp',
+
+		// NOTIFICATION
 		'notify:build'
 	]);
 

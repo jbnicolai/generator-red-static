@@ -7,6 +7,7 @@
 
 module.exports = function (config) {
 	return {
-		build: config.deploy + '*'
+		build: config.deploy + '*',
+		temp: '.temp'
 	};
 };
