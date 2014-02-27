@@ -17,6 +17,11 @@ module.exports = function (config) {
 				config.source + 'lib/modernizr/modernizr.js'
 			],
 			dest: config.deploy
+		},
+		develop: {
+			expand: true,
+			src: [config.source + 'scss/**/*.scss'],
+			dest: config.deploy
 		}
 	};
 };

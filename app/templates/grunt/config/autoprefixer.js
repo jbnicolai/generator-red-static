@@ -10,11 +10,19 @@ module.exports = function (config) {
 		options: {
 			browsers: ['> 1%', 'last 2 versions', 'ie 9']
 		},
-		prefix: {
-			expand: true,
-			flatten: true,
-			src: '.temp/css/*.css',
-			dest: config.static + 'css/'
+		build: {
+			files : [{
+				expand: true,
+				cwd: '.temp/css/',
+				src: '*.css',
+				dest: config.static + 'css/'
+			}]
+		},
+		develop: {
+			files : '<%= autoprefixer.build.files %>',
+			options: {
+				map: true
+			}
 		}
 	};
 };

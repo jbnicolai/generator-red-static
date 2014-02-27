@@ -9,7 +9,7 @@ module.exports = function (config) {
 	return {
 		compass: {
 			files: [config.source + 'scss/{,**/}{,*.scss,*.sass}'],
-			tasks: ['compass:develop', 'autoprefixer']
+			tasks: ['sass:develop', 'autoprefixer:develop', 'newer:copy:develop']
 		},
 		emberTemplates: {
 			files: config.source + 'templates/{,**/}{,*.hbs}',

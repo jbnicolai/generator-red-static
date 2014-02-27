@@ -9,7 +9,6 @@ You should have one path for each dependency.
 
 ```sh
 which node npm grunt yo
-which ruby gem compass
 ```
 
 Installing <%= projectName %>
