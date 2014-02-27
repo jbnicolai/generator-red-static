@@ -59,6 +59,7 @@ module.exports = function (grunt) {
 		// JS
 		'neuter:libsDevelop',
 		'neuter:app',
+		'neuter:tests',
 		'emberTemplates',
 
 		// CSS

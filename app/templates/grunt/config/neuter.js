@@ -14,6 +14,10 @@ module.exports = function (config) {
 			src: config.source + 'js/app.js',
 			dest: config.static + 'js/app.develop.js'
 		},
+		tests: {
+			src: config.source + 'tests/tests.js',
+			dest: config.static + 'js/tests.js'
+		},
 		libsDevelop: {
 			options: {
 				template : '{%= src %}'
