@@ -27,6 +27,10 @@ module.exports = function (config) {
 			files: [config.source + 'js/libs.js'],
 			tasks: ['neuter:libsDevelop']
 		},
+		neuterTests: {
+			files: [config.source + 'tests/{,**/}{,*.js}'],
+			tasks: ['neuter:tests']
+		},
 		copy : {
 			files: '<%= copy.build.src %>',
 			tasks: ['newer:copy:build']
