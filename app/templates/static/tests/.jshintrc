@@ -80,6 +80,7 @@
         "visit"            : false,
         "wait"             : false,
 
-        "invokeHelper"     : false
+        "invokeHelper"     : false,
+        "createComponent"  : false
     }
 }
