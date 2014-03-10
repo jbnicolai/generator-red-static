@@ -4,7 +4,7 @@ RED Interactive's [Yeoman](http://yeoman.io) generator for static site projects.
 
 ## Frontend stack
 
-* SASS + Compass
+* SASS
 * Ember
 * Ember Model
 
@@ -13,8 +13,7 @@ RED Interactive's [Yeoman](http://yeoman.io) generator for static site projects.
 You should have one path for each dependency.
 
 ```sh
-which node npm grunt yo
-which ruby gem compass
+which node npm grunt yo bower
 ```
 
 ## Installation

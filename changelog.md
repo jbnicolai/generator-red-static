@@ -1,5 +1,11 @@
 ## History
 
+### `0.3.0` _2014-03-10_
+
+* Added `qunit` testing framework.
+* Switched from `compass` to `libsass`. Removed `ruby sass bundler rbenv compass` dependencies.
+* Switched from `caboose` to `red-sass`.
+
 ### `0.2.1` _2014-02-10_
 
 * Added `handlebars` bower dependency at `~1.3.0`.
