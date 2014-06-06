@@ -74,16 +74,7 @@ RedStaticGenerator.prototype.scssDir = function scssDir() {
 };
 
 RedStaticGenerator.prototype.jsDir = function jsDir() {
-	var JS = 'static/js/';
-	this.template(JS + 'app.js',    JS + 'app.js');
-	this.template(JS + 'router.js', JS + 'router.js');
-	this.copy(JS + 'libs.js',       JS + 'libs.js');
-	this.write(JS + 'components/.gitkeep', '');
-	this.write(JS + 'controllers/.gitkeep', '');
-	this.write(JS + 'mixins/.gitkeep', '');
-	this.write(JS + 'models/.gitkeep', '');
-	this.write(JS + 'routes/.gitkeep', '');
-	this.write(JS + 'views/.gitkeep', '');
+	this.directory('static/js/');
 };
 
 RedStaticGenerator.prototype.testsDir = function testsDir() {

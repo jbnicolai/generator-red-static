@@ -1,13 +1,14 @@
-@import "red-sass/red-sass",
+@import "red-sass/red-sass";
+@include reset;
 
-	"mixins/mixins",
+@import
+"mixins/colors",
+"mixins/type",
+"mixins/mixins",
 
-	"placeholders/placeholders",
+"fonts/icons",
 
-	"fonts/icons",
+"components/rename-me",
 
-	"base/body",
-	"base/header",
-	"base/footer",
-
-	"pages/index";
+"apps/application",
+"apps/index";
