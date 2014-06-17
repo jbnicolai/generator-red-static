@@ -1,7 +1,7 @@
 /*jshint node:true*/
 'use strict';
 
-// https://github.com/dylang/grunt-neuter
+// https://github.com/trek/grunt-neuter
 
 // Concatenate files in the order you require.
 
