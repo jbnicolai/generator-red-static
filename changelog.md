@@ -1,5 +1,25 @@
 ## History
 
+### `0.4.0` _2014-06-17_
+
+* Changed js directory to group Routes, Controllers, and Views by app.
+* Updated `red-sass` from `~0.1.0` to `~0.2.0`. [See Changelog](https://github.com/ff0000/red-sass/blob/master/changelog.md)
+* Updated `jquery` from `~1.10.2` to `~1.11.1`. [See Changelog](http://blog.jquery.com/2014/05/01/jquery-1-11-1-and-2-1-1-released/)
+* Updated `ember` from `~1.3.2` to `~1.5.1`. [See Changelog](http://emberjs.com/blog/2014/03/30/ember-1-5-0-and-ember-1-6-beta-released.html)
+* Updated `modernizr` from `~2.7.1` to `~2.8.2`. [See Changelog](https://github.com/Modernizr/Modernizr/compare/v2.7.1...v2.8.2)
+* Updated `qunit` from `~1.12.0` to `~1.14.0`. [See Changelog](https://github.com/jquery/qunit/blob/master/History.md)
+* Updated `grunt-autoprefixer` from `~0.6.5` to `~0.7.4`. [See Changelog](https://github.com/nDmitry/grunt-autoprefixer/blob/master/CHANGELOG)
+* Updated `grunt-contrib-connect` from `~0.6.0` to `~0.8.0`. [See Changelog](https://github.com/gruntjs/grunt-contrib-connect/blob/master/CHANGELOG)
+* Updated `grunt-contrib-jshint` from `~0.8.0` to `~0.10.0`. [See Changelog](https://github.com/gruntjs/grunt-contrib-jshint/blob/master/CHANGELOG)
+* Updated `grunt-contrib-uglify` from `~0.3.2` to `~0.5.0`. [See Changelog](https://github.com/gruntjs/grunt-contrib-uglify/blob/master/CHANGELOG)
+* Updated `grunt-contrib-watch` from `~0.5.3` to `~0.6.1`. [See Changelog](https://github.com/gruntjs/grunt-contrib-watch/blob/master/CHANGELOG)
+* Updated `grunt-newer` from `~0.6.1` to `~0.7.0`. [See Changelog](https://github.com/tschaub/grunt-newer/blob/master/changelog.md)
+* Updated `grunt-notify` from `~0.2.17` to `~0.3.0`. [See Changelog](https://github.com/dylang/grunt-notify/blob/master/CHANGELOG.md)
+* Updated `grunt-sass` from `~0.11.0` to `~0.12.1`. [See Changelog](https://github.com/sindresorhus/grunt-sass/compare/v0.11.0...v0.12.0)
+* Updated `grunt-webfont` from `~0.3.2` to `~0.4.2`. [See Changelog](https://github.com/sapegin/grunt-webfont/blob/master/Changelog.md)
+* Updated `load-grunt-tasks` from `~0.3.0` to `~0.5.0`. [See Changelog](https://github.com/sindresorhus/load-grunt-tasks/compare/v0.3.0...v0.5.0)
+* Updated `time-grunt` from `~0.2.8` to `~0.3.2`. [See Changelog](https://github.com/sindresorhus/time-grunt/compare/v0.2.8...v0.3.2)
+
 ### `0.3.0` _2014-03-10_
 
 * Added `qunit` testing framework.
