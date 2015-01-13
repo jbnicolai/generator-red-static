@@ -22,6 +22,7 @@ module.exports = function (grunt) {
 		'emberTemplates',
 		'haychtml',
 		'jshint',
+		'modernizr',
 		'neuter',
 		'notify',
 		'sass',
@@ -82,6 +83,7 @@ module.exports = function (grunt) {
 		'jshint',
 		'neuter:libsBuild',
 		'neuter:app',
+		'modernizr',
 		'emberTemplates',
 		'uglify',
 
