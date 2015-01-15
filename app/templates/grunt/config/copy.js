@@ -13,14 +13,16 @@ module.exports = function (config) {
 				config.source + '*.{ico,txt}',
 				config.source + '.htaccess',
 				config.source + 'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
-				config.source + 'fonts/*',
-				config.source + 'lib/modernizr/modernizr.js'
+				config.source + 'fonts/*'
 			],
 			dest: config.deploy
 		},
 		develop: {
 			expand: true,
-			src: [config.source + 'scss/**/*.scss'],
+			src: [
+				config.source + 'scss/**/*.scss',
+				config.source + 'lib/modernizr/modernizr.js'
+			],
 			dest: config.deploy
 		}
 	};

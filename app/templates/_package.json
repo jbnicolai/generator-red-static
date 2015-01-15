@@ -14,6 +14,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-ember-templates": "~0.4.18",
     "grunt-haychtml": "~0.1.1",
+    "grunt-modernizr": "~0.6.0",
     "grunt-neuter": "~0.6.0",
     "grunt-newer": "~0.7.0",
     "grunt-notify": "~0.3.0",
