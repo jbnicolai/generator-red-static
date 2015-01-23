@@ -67,6 +67,7 @@ RedStaticGenerator.prototype.staticDir = function staticDir() {
 	this.mkdir('static/fonts');
 	this.mkdir('static/icons');
 	this.mkdir('static/img');
+	this.mkdir('static/img/sprites-source/application');
 };
 
 RedStaticGenerator.prototype.scssDir = function scssDir() {

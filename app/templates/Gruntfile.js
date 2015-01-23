@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 		'neuter',
 		'notify',
 		'sass',
+		'sprite',
 		'uglify',
 		'watch',
 		'webfont'
