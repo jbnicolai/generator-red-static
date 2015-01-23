@@ -1,5 +1,26 @@
 ## History
 
+### `0.5.0` _2015-01-23_
+
+* Added `grunt-modernizr` at `~0.6.0`
+* Updated `ember` from `1.5.1` to `1.7.1`
+* Updated `ember-model` from `0.0.11` to `0.0.14`
+* Updated `grunt` from `0.4.2` to `0.4.5`
+* Updated `grunt-autoprefixer` from `0.7.4` to `2.2.0`
+* Updated `grunt-contrib-connect` from `0.8.0` to `0.9.0`
+* Updated `grunt-contrib-copy` from `0.5.0` to `0.7.0`
+* Updated `grunt-contrib-clean` from `0.5.0` to `0.6.0`
+* Updated `grunt-contrib-jshint` from `0.10.0` to `0.11.0`
+* Updated `grunt-contrib-uglify` from `0.5.0` to `0.7.0`
+* Updated `grunt-ember-templates` from `0.4.18` to `0.4.23`
+* Updated `grunt-newer` from `0.7.0` to `1.1.0`
+* Updated `grunt-notify` from `0.3.0` to `0.4.1`
+* Updated `grunt-sass` from `0.12.1` to `0.17.0`
+* Updated `grunt-webfont` from `0.4.2` to `0.5.1`
+* Updated `load-grunt-tasks` from `0.5.0` to `3.0.0`
+* Updated `swig` from `1.3.2` to `1.4.2`
+* Updated `time-grunt` from `0.3.2` to `1.0.0`
+
 ### `0.4.0` _2014-06-17_
 
 * Changed js directory to group Routes, Controllers, and Views by app.
