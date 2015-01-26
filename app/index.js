@@ -31,10 +31,15 @@ RedStaticGenerator.prototype.askFor = function askFor() {
 		name: 'projectName',
 		message: 'What is the project called?',
 		default: _.titleize(_.humanize(path.basename(this.env.cwd)))
+	}, {
+		name: 'productionUrl',
+		message: 'What will the production url be?',
+		default: 'http://' + _.slugify(path.basename(this.env.cwd)) + '.com'
 	}];
 
 	this.prompt(prompts, function (props) {
 		this.projectName = props.projectName;
+		this.productionUrl = props.productionUrl;
 
 		cb();
 	}.bind(this));
@@ -68,6 +73,7 @@ RedStaticGenerator.prototype.staticDir = function staticDir() {
 	this.mkdir('static/icons');
 	this.mkdir('static/img');
 	this.mkdir('static/img/sprites-source/application');
+	this.template('static/_robots.txt', 'static/robots.txt');
 };
 
 RedStaticGenerator.prototype.scssDir = function scssDir() {

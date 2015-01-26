@@ -10,11 +10,16 @@ module.exports = function (config) {
 		build: {
 			expand: true,
 			src: [
-				config.source + '*.{ico,txt}',
 				config.source + '.htaccess',
 				config.source + 'img/{,*/}*.{jpg,jpeg,png,webp,gif}',
 				config.source + 'fonts/*'
 			],
+			dest: config.deploy
+		},
+		buildRoot: {
+			expand: true,
+			flatten: true,
+			src: [config.source + '*.{ico,txt,xml}'],
 			dest: config.deploy
 		},
 		develop: {
