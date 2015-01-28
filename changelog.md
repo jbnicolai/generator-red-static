@@ -1,25 +1,29 @@
 ## History
 
-### `0.5.0` _2015-01-23_
+### `0.5.0` _2015-01-28_
 
 * Added `grunt-modernizr` at `~0.6.0`
-* Updated `ember` from `1.5.1` to `1.7.1`
-* Updated `ember-model` from `0.0.11` to `0.0.14`
-* Updated `grunt` from `0.4.2` to `0.4.5`
-* Updated `grunt-autoprefixer` from `0.7.4` to `2.2.0`
-* Updated `grunt-contrib-connect` from `0.8.0` to `0.9.0`
-* Updated `grunt-contrib-copy` from `0.5.0` to `0.7.0`
-* Updated `grunt-contrib-clean` from `0.5.0` to `0.6.0`
-* Updated `grunt-contrib-jshint` from `0.10.0` to `0.11.0`
-* Updated `grunt-contrib-uglify` from `0.5.0` to `0.7.0`
-* Updated `grunt-ember-templates` from `0.4.18` to `0.4.23`
-* Updated `grunt-newer` from `0.7.0` to `1.1.0`
-* Updated `grunt-notify` from `0.3.0` to `0.4.1`
-* Updated `grunt-sass` from `0.12.1` to `0.17.0`
-* Updated `grunt-webfont` from `0.4.2` to `0.5.1`
-* Updated `load-grunt-tasks` from `0.5.0` to `3.0.0`
-* Updated `swig` from `1.3.2` to `1.4.2`
-* Updated `time-grunt` from `0.3.2` to `1.0.0`
+* Added `grunt-spritesmith` at `~3.5.0`
+* Added `grunt-xml-sitemap` at `~0.2.0`
+* Added `robots.txt`
+* Added separate `copy:buildRoot` to copy `*.{ico,txt,xml}` to deploy root
+* Updated `ember` from `~1.5.1` to `~1.7.1` [See Changelog](http://emberjs.com/blog/2014/08/23/ember-1-7-0-released.html)
+* Updated `ember-model` from `~0.0.11` to `~0.0.14` [See Changelog](https://github.com/ebryn/ember-model/compare/0.0.11...0.0.14)
+* Updated `grunt` from `~0.4.2` to `~0.4.5` [See Changelog](https://github.com/gruntjs/grunt/blob/master/CHANGELOG)
+* Updated `grunt-autoprefixer` from `~0.7.4` to `~2.2.0` [See Changelog](https://github.com/nDmitry/grunt-autoprefixer/blob/master/CHANGELOG)
+* Updated `grunt-contrib-connect` from `~0.8.0` to `~0.9.0` [See Changelog](https://github.com/gruntjs/grunt-contrib-connect/blob/master/CHANGELOG)
+* Updated `grunt-contrib-copy` from `~0.5.0` to `~0.7.0` [See Changelog](https://github.com/gruntjs/grunt-contrib-copy/blob/master/CHANGELOG)
+* Updated `grunt-contrib-clean` from `~0.5.0` to `~0.6.0` [See Changelog](https://github.com/gruntjs/grunt-contrib-clean/blob/master/CHANGELOG)
+* Updated `grunt-contrib-jshint` from `~0.10.0` to `~0.11.0` [See Changelog](https://github.com/gruntjs/grunt-contrib-jshint/blob/master/CHANGELOG)
+* Updated `grunt-contrib-uglify` from `~0.5.0` to `~0.7.0` [See Changelog](https://github.com/gruntjs/grunt-contrib-uglify/blob/master/CHANGELOG)
+* Updated `grunt-ember-templates` from `~0.4.18` to `~0.4.23` [See Changelog](https://github.com/dgeb/grunt-ember-templates#release-history)
+* Updated `grunt-newer` from `~0.7.0` to `~1.1.0` [See Changelog](https://github.com/tschaub/grunt-newer/blob/master/changelog.md)
+* Updated `grunt-notify` from `~0.3.0` to `~0.4.1` [See Changelog](https://github.com/dylang/grunt-notify/blob/master/CHANGELOG.md)
+* Updated `grunt-sass` from `~0.12.1` to `~0.17.0` [See Changelog](https://github.com/sindresorhus/grunt-sass/compare/v0.12.1...v0.17.0)
+* Updated `grunt-webfont` from `~0.4.2` to `~0.5.1` [See Changelog](https://github.com/sapegin/grunt-webfont/blob/master/Changelog.md)
+* Updated `load-grunt-tasks` from `~0.5.0` to `~3.0.0` [See Changelog](https://github.com/sindresorhus/load-grunt-tasks/compare/v0.5.0...v3.0.0)
+* Updated `swig` from `~1.3.2` to `~1.4.2` [See Changelog](https://github.com/paularmstrong/swig/blob/master/HISTORY.md)
+* Updated `time-grunt` from `~0.3.2` to `~1.0.0` [See Changelog](https://github.com/sindresorhus/time-grunt/compare/v0.3.2...v1.0.0)
 
 ### `0.4.0` _2014-06-17_
 
