@@ -29,7 +29,8 @@ module.exports = function (grunt) {
 		'sprite',
 		'uglify',
 		'watch',
-		'webfont'
+		'webfont',
+		'xml_sitemap'
 	].forEach(function (key) {
 		grunt.config(key, require('./grunt/config/' + key)(CONFIG));
 	});
@@ -73,7 +74,8 @@ module.exports = function (grunt) {
 
 		// OTHER FILES
 		'copy:develop',
-		'copy:build'
+		'copy:build',
+		'copy:buildRoot'
 	]);
 
 	// Build minified files for deployment
@@ -94,9 +96,11 @@ module.exports = function (grunt) {
 
 		// HTML
 		'haychtml:build',
+		'xml_sitemap',
 
 		// OTHER FILES
 		'copy:build',
+		'copy:buildRoot',
 
 		// TEMP FOLDER
 		'clean:temp',
