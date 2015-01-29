@@ -1,6 +1,6 @@
 {
   "name": "generator-red-static",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "RED Interactive's Yeoman generator for static sites.",
   "keywords": [
     "yeoman-generator"
